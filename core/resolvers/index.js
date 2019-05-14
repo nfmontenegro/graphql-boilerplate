@@ -1,8 +1,8 @@
 import {mergeResolvers} from 'merge-graphql-schemas'
 import UserQuery from './Query/User.Query.js'
-// import UserMutation from './Mutations/User.Mutation'
+import UserMutation from './Mutation/User.Mutation'
 
-const resolversArray = [UserQuery]
+const resolversArray = [UserQuery, UserMutation]
 
 const resolvers = mergeResolvers(resolversArray)
 
