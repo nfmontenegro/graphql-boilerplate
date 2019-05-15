@@ -3,7 +3,7 @@ type Query {
 }
 
 type Mutation {
-  post(name: String!, lastname: String!, password: String!): User
+  post(name: String!, lastname: String!, email: String!, password: String!): User
 }
 
 type User {
