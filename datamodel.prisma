@@ -4,4 +4,6 @@ type User {
   lastname: String!
   email: String!
   password: String!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
 }
