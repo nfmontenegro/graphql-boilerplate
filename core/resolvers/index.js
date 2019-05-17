@@ -1,4 +1,5 @@
 import {mergeResolvers} from 'merge-graphql-schemas'
+
 import UserQuery from './Query/User.Query.js'
 import UserMutation from './Mutation/User.Mutation'
 
