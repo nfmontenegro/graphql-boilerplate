@@ -1,5 +1,4 @@
 import bcrypt from 'bcrypt'
-import {argumentsObjectFromField} from 'apollo-utilities'
 
 export default {
   Mutation: {

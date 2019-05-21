@@ -1,5 +1,5 @@
 type User {
-  id: ID! @id
+  id: ID! @unique
   name: String!
   lastname: String!
   email: String!
