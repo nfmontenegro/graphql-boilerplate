@@ -1,8 +1,13 @@
+import {getUserId} from '../../utils'
+
 export default {
   Query: {
-    async user(_, {id}, {prisma}, info) {
-      const user = await prisma.user({id})
-      return user
+    me: (_, args, context, info) => {
+      const userId = getUserId(context)
+      return context.prisma.user({id: userId})
+    },
+    users: (_, args, {prisma}, info) => {
+      return prisma.users()
     }
   }
 }
