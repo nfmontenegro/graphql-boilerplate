@@ -5,7 +5,7 @@ import {APP_SECRET} from '../../utils'
 
 export default {
   Mutation: {
-    signup: async (parent, {name, lastname, email, password}, {prisma}) => {
+    signup: async (_, {name, lastname, email, password}, {prisma}) => {
       const hashedPassword = await hash(password, 10)
       const hadUser = await prisma.user({email})
 
@@ -37,6 +37,18 @@ export default {
         token: sign({userId: user.id}, APP_SECRET),
         user
       }
+    },
+    async updateUser(_, args, {prisma}, info) {
+      console.log('ARgs:!!', args)
+      const {id, ...user} = args
+      await prisma.updateUser({
+        data: user,
+        where: {
+          id
+        }
+      })
+
+      return 'Usuario actualizado!'
     }
   }
 }

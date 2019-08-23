@@ -58,6 +58,7 @@ type User {
   lastname: String!
   email: String!
   password: String!
+  avatarURL: String
   createdAt: DateTime!
   updatedAt: DateTime!
 }
@@ -74,6 +75,7 @@ input UserCreateInput {
   lastname: String!
   email: String!
   password: String!
+  avatarURL: String
 }
 
 type UserEdge {
@@ -92,6 +94,8 @@ enum UserOrderByInput {
   email_DESC
   password_ASC
   password_DESC
+  avatarURL_ASC
+  avatarURL_DESC
   createdAt_ASC
   createdAt_DESC
   updatedAt_ASC
@@ -104,6 +108,7 @@ type UserPreviousValues {
   lastname: String!
   email: String!
   password: String!
+  avatarURL: String
   createdAt: DateTime!
   updatedAt: DateTime!
 }
@@ -131,6 +136,7 @@ input UserUpdateInput {
   lastname: String
   email: String
   password: String
+  avatarURL: String
 }
 
 input UserUpdateManyMutationInput {
@@ -138,6 +144,7 @@ input UserUpdateManyMutationInput {
   lastname: String
   email: String
   password: String
+  avatarURL: String
 }
 
 input UserWhereInput {
@@ -211,6 +218,20 @@ input UserWhereInput {
   password_not_starts_with: String
   password_ends_with: String
   password_not_ends_with: String
+  avatarURL: String
+  avatarURL_not: String
+  avatarURL_in: [String!]
+  avatarURL_not_in: [String!]
+  avatarURL_lt: String
+  avatarURL_lte: String
+  avatarURL_gt: String
+  avatarURL_gte: String
+  avatarURL_contains: String
+  avatarURL_not_contains: String
+  avatarURL_starts_with: String
+  avatarURL_not_starts_with: String
+  avatarURL_ends_with: String
+  avatarURL_not_ends_with: String
   createdAt: DateTime
   createdAt_not: DateTime
   createdAt_in: [DateTime!]

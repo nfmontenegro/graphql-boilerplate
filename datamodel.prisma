@@ -4,6 +4,7 @@ type User {
   lastname: String!
   email: String! @unique
   password: String!
+  avatarURL: String
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }

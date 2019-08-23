@@ -6,6 +6,7 @@ type Query {
 type Mutation {
   signup(name: String!, lastname: String!, email: String!, password: String!): AuthPayload!
   login(email: String!, password: String!): AuthPayload!
+  updateUser(id: String!, name: String, lastname: String, avatarURL: String, file: Upload): String!
 }
 
 type User {
@@ -14,9 +15,16 @@ type User {
   lastname: String!
   email: String!
   password: String!
+  avatarURL: String!
 }
 
 type AuthPayload {
   token: String!
   user: User!
+}
+
+type File {
+  filename: String!
+  mimetype: String!
+  encoding: String!
 }

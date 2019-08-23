@@ -112,6 +112,8 @@ export type UserOrderByInput =
   | "email_DESC"
   | "password_ASC"
   | "password_DESC"
+  | "avatarURL_ASC"
+  | "avatarURL_DESC"
   | "createdAt_ASC"
   | "createdAt_DESC"
   | "updatedAt_ASC"
@@ -125,6 +127,7 @@ export interface UserCreateInput {
   lastname: String;
   email: String;
   password: String;
+  avatarURL?: Maybe<String>;
 }
 
 export interface UserUpdateInput {
@@ -132,6 +135,7 @@ export interface UserUpdateInput {
   lastname?: Maybe<String>;
   email?: Maybe<String>;
   password?: Maybe<String>;
+  avatarURL?: Maybe<String>;
 }
 
 export interface UserWhereInput {
@@ -205,6 +209,20 @@ export interface UserWhereInput {
   password_not_starts_with?: Maybe<String>;
   password_ends_with?: Maybe<String>;
   password_not_ends_with?: Maybe<String>;
+  avatarURL?: Maybe<String>;
+  avatarURL_not?: Maybe<String>;
+  avatarURL_in?: Maybe<String[] | String>;
+  avatarURL_not_in?: Maybe<String[] | String>;
+  avatarURL_lt?: Maybe<String>;
+  avatarURL_lte?: Maybe<String>;
+  avatarURL_gt?: Maybe<String>;
+  avatarURL_gte?: Maybe<String>;
+  avatarURL_contains?: Maybe<String>;
+  avatarURL_not_contains?: Maybe<String>;
+  avatarURL_starts_with?: Maybe<String>;
+  avatarURL_not_starts_with?: Maybe<String>;
+  avatarURL_ends_with?: Maybe<String>;
+  avatarURL_not_ends_with?: Maybe<String>;
   createdAt?: Maybe<DateTimeInput>;
   createdAt_not?: Maybe<DateTimeInput>;
   createdAt_in?: Maybe<DateTimeInput[] | DateTimeInput>;
@@ -231,6 +249,7 @@ export interface UserUpdateManyMutationInput {
   lastname?: Maybe<String>;
   email?: Maybe<String>;
   password?: Maybe<String>;
+  avatarURL?: Maybe<String>;
 }
 
 export interface UserSubscriptionWhereInput {
@@ -292,6 +311,7 @@ export interface User {
   lastname: String;
   email: String;
   password: String;
+  avatarURL?: String;
   createdAt: DateTimeOutput;
   updatedAt: DateTimeOutput;
 }
@@ -302,6 +322,7 @@ export interface UserPromise extends Promise<User>, Fragmentable {
   lastname: () => Promise<String>;
   email: () => Promise<String>;
   password: () => Promise<String>;
+  avatarURL: () => Promise<String>;
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
 }
@@ -314,6 +335,7 @@ export interface UserSubscription
   lastname: () => Promise<AsyncIterator<String>>;
   email: () => Promise<AsyncIterator<String>>;
   password: () => Promise<AsyncIterator<String>>;
+  avatarURL: () => Promise<AsyncIterator<String>>;
   createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
 }
@@ -326,6 +348,7 @@ export interface UserNullablePromise
   lastname: () => Promise<String>;
   email: () => Promise<String>;
   password: () => Promise<String>;
+  avatarURL: () => Promise<String>;
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
 }
@@ -421,6 +444,7 @@ export interface UserPreviousValues {
   lastname: String;
   email: String;
   password: String;
+  avatarURL?: String;
   createdAt: DateTimeOutput;
   updatedAt: DateTimeOutput;
 }
@@ -433,6 +457,7 @@ export interface UserPreviousValuesPromise
   lastname: () => Promise<String>;
   email: () => Promise<String>;
   password: () => Promise<String>;
+  avatarURL: () => Promise<String>;
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
 }
@@ -445,6 +470,7 @@ export interface UserPreviousValuesSubscription
   lastname: () => Promise<AsyncIterator<String>>;
   email: () => Promise<AsyncIterator<String>>;
   password: () => Promise<AsyncIterator<String>>;
+  avatarURL: () => Promise<AsyncIterator<String>>;
   createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
 }
