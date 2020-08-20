@@ -16,7 +16,7 @@
   "author": "Nicolás Flores Montenenegro",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "graphql-shield": "^5.3.5",
     "graphql-yoga": "^1.17.4",
     "jest": "^24.9.0",
